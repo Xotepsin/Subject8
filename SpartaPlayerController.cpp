@@ -202,7 +202,7 @@ void ASpartaPlayerController::ShowClearMenu()
 			if (USpartaGameInstance* SpartaGameInstance = Cast<USpartaGameInstance>(UGameplayStatics::GetGameInstance(this)))
 			{
 				TotalScoreText->SetText(FText::FromString(
-					FString::Printf(TEXT("Total Score: %.1f"),
+					FString::Printf(TEXT("Total Time: %.1f"),
 						SpartaGameInstance->TotalTime)
 				));
 			}
@@ -212,7 +212,7 @@ void ASpartaPlayerController::ShowClearMenu()
 			if (USpartaGameInstance* SpartaGameInstance = Cast<USpartaGameInstance>(UGameplayStatics::GetGameInstance(this)))
 			{
 				TotalScoreText->SetText(FText::FromString(
-					FString::Printf(TEXT("Total Score: %d"),
+					FString::Printf(TEXT("Collected Coin: %d"),
 						SpartaGameInstance->CollectCoin)
 				));
 			}

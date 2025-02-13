@@ -223,14 +223,14 @@ void ASpartaGameState::OnCoinCollected()
 
 	if (SpawnedCoinCount > 0 && CollectedCoinCount >= SpawnedCoinCount)
 	{
-		float RemainingTime = GetWorldTimerManager().GetTimerRemaining(WaveTimerHandle);
+		float ElapsedTime = LevelDuration - GetWorldTimerManager().GetTimerRemaining(WaveTimerHandle);
 
 		if (UGameInstance* GameInstance = GetGameInstance())
 		{
 			USpartaGameInstance* SpartaGameInstance = Cast<USpartaGameInstance>(GameInstance);
 			if (SpartaGameInstance)
 			{
-				SpartaGameInstance->AddToTotalTime(RemainingTime);
+				SpartaGameInstance->AddToTotalTime(ElapsedTime);
 			}
 		}
 
